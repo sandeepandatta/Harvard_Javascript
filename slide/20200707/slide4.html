@@ -1,0 +1,53 @@
+<html><head><meta charset="utf-8"/><title>Slide 4 - Font - Include through link element § Session 05 - CSS Layout, Frameworks, and Preprocessors</title><meta name="lecture" content="5"/><meta name="date" content="Session 05"/><link rel="stylesheet" href="slide_cscis12-2020.css"/><link rel="stylesheet" href="resources/jquery/css/smoothness/jquery-ui.css"/><script src="resources/js/jquery-1.9.0.min.js"> </script><script src="resources/js/jquery-ui-1.10.0.custom.min.js"> </script><link rel="stylesheet" href="prism/prism.css"/><script src="prism/prism.js"> </script><script src="resources/js/site.js">/* site.js */</script><script>
+    $(document).ready(function(){
+      $('pre[class*="language-"]').addClass('prism');
+      $('pre[class*="language-"] code').addClass('prism');
+      $('code[class*="language-"]').addClass('prism');
+
+      console.log( $('*[id^=example-container]') );
+      $('*[id^=example-container]').each(function(index,elem){
+        $(elem).tabs({selected: $(elem).attr("data-tabselected")});
+      });
+
+      var $myhost = location.host;
+      if ($myhost.match(/localhost/)) {
+        $('.hide-for-localhost').hide();
+      }
+    });
+  </script><script async="async" src="https://www.googletagmanager.com/gtag/js?id=UA-2675499-2"/><script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+
+      gtag('config', 'UA-2675499-2');
+    </script></head><body><header><div id="header"><div id="schoolname"><a href="https://summer.harvard.edu/">Harvard Summer School</a></div><div id="coursename"><a href="https://cscis12.dce.harvard.edu/">CSCI S-12 Fundamentals of Web Site Development<span class="term">  |  Summer 2020</span></a></div></div></header><nav><div class="navprevnext"><a class="button previous" href="slide3.html" title="Font - @font-face" accesskey="&lt;">◁ previous</a><span class="hide-for-localhost"> Slide 4</span><span class="hide-for-localhost"> | </span><a class="button next" href="slide5.html" title="Font - Include through JavaScript" accesskey="&gt;"> next  ▷</a></div></nav><main><h2>Font - Include through link element</h2><p>Using a <code>link</code> element to include CSS with <code>@font-face</code> definitions is how some font hosting services recommend including their fonts.  <a href="https://www.google.com/fonts/" shape="rect">Google Fonts</a> does this.</p><p>The server delivering the fonts does browser detection and delivers the CSS file with the appropriate font format.</p><ul><li><a href="webfont-link.html" shape="rect">Example:  Google Fonts</a></li></ul><p>Note that we are having using two Google Fonts -- Cabin Sketch and Cabin.</p><pre name="code" class="language-markup line-numbers"><code>&lt;link rel="stylesheet"
+  href="https://fonts.googleapis.com/css?family=Cabin+Sketch|Cabin" /&gt;</code></pre><p>Our CSS:</p><pre name="code" class="language-css line-numbers"><code>h1,h2,h3,h4,h5,h6 {
+  font-family:"Cabin Sketch", sans-serif;
+}
+
+h1 {
+  font-size:3em;
+}
+
+h2 {
+  font-size:2em;
+}
+
+body {
+  font-family: Cabin, serif;
+}</code></pre><p><img src="images/webfont-link.png" alt="web font"/></p><hr/><p>Note that nothing magical is going on here -- Google is simply returning CSS that uses <code>@font-face</code> with the font format appropriate for the browser making the request.</p><pre name="code" class="language-css line-numbers"><code>/* latin */
+@font-face {
+  font-family: 'Cabin';
+  font-style: normal;
+  font-weight: 400;
+  src: local('Cabin Regular'), local('Cabin-Regular'), url(https://fonts.gstatic.com/s/cabin/v8/4VMQLG5UaE3m5rr_emmAqaCWcynf_cDxXwCLxiixG1c.woff2) format('woff2');
+  unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02C6, U+02DA, U+02DC, U+2000-206F, U+2074, U+20AC, U+2212, U+2215, U+E0FF, U+EFFD, U+F000;
+}
+/* latin */
+@font-face {
+  font-family: 'Cabin Sketch';
+  font-style: normal;
+  font-weight: 400;
+  src: local('Cabin Sketch Regular'), local('CabinSketch-Regular'), url(https://fonts.gstatic.com/s/cabinsketch/v8/d9fijO34zQajqQvl3YHRCRampu5_7CjHW5spxoeN3Vs.woff2) format('woff2');
+  unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02C6, U+02DA, U+02DC, U+2000-206F, U+2074, U+20AC, U+2212, U+2215, U+E0FF, U+EFFD, U+F000;
+}</code></pre></main><nav><div class="navprevnext"><a class="button previous" href="slide3.html" title="Font - @font-face">◁ previous</a><span class="hide-for-localhost"> Slide 4</span><span class="hide-for-localhost"> | </span><a class="button next" href="slide5.html" title="Font - Include through JavaScript"> next  ▷</a></div><footer><a class="button toc" href="slide1.html">Table of Contents</a><a class="button cl" href="https://cscis12.dce.harvard.edu/">CSCI S-12</a><p class="copyright">Copyright © David Heitmeyer</p></footer></nav></body></html>

@@ -1,0 +1,77 @@
+/* put your style below! */
+header h1 {
+    background-color: #385905;
+    width: 100%;
+    color:white;
+    /*padding-left: 0.25em;*/
+    
+}
+
+body{
+    background-color:#F2EDE4 ;
+}
+
+h2, h3, h4 {
+
+    color:#385905;
+    /*padding-left:0.25em;*/
+    }
+
+article {
+    display:flex;
+   }
+
+section{
+    flex:2;
+    /*padding-left: 0.25em;*/
+}
+
+aside{
+    flex:1;
+    /*padding-left: 0.25em;*/
+}
+
+img {
+    float:right;
+    clear:right;
+    margin-left:1em;
+    margin-right:1em;
+}
+
+li > a {
+
+    color:#7AA61C
+}
+
+div {
+    display:flex;
+    /*padding-left:0.25em;*/
+}
+
+div ul{
+
+    width:25%;
+    
+}
+
+hr{
+    border:2px solid black;
+}
+
+/* some information you might find useful */
+/* ==========================================
+Adobe Color Palette
+
+"Basil Blur Close Up" Palette by Brynley Edens
+https://color.adobe.com/basil-blur-close-up-1391505-color-theme-13743983
+
+dark green -   color: #385905; 
+medium green - color: #7AA61C; 
+yellow green - color: #A6BF49;
+beige green -  color: #BFBD99; 
+light beige -  color: #F2EDE4; 
+*/
+
+
+
+

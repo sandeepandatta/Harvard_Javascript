@@ -1,0 +1,26 @@
+<html><head><meta charset="utf-8"/><title>Slide 2 - Fonts § Session 05 - CSS Layout, Frameworks, and Preprocessors</title><meta name="lecture" content="5"/><meta name="date" content="Session 05"/><link rel="stylesheet" href="slide_cscis12-2020.css"/><link rel="stylesheet" href="resources/jquery/css/smoothness/jquery-ui.css"/><script src="resources/js/jquery-1.9.0.min.js"> </script><script src="resources/js/jquery-ui-1.10.0.custom.min.js"> </script><link rel="stylesheet" href="prism/prism.css"/><script src="prism/prism.js"> </script><script src="resources/js/site.js">/* site.js */</script><script>
+    $(document).ready(function(){
+      $('pre[class*="language-"]').addClass('prism');
+      $('pre[class*="language-"] code').addClass('prism');
+      $('code[class*="language-"]').addClass('prism');
+
+      console.log( $('*[id^=example-container]') );
+      $('*[id^=example-container]').each(function(index,elem){
+        $(elem).tabs({selected: $(elem).attr("data-tabselected")});
+      });
+
+      var $myhost = location.host;
+      if ($myhost.match(/localhost/)) {
+        $('.hide-for-localhost').hide();
+      }
+    });
+  </script><script async="async" src="https://www.googletagmanager.com/gtag/js?id=UA-2675499-2"/><script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+
+      gtag('config', 'UA-2675499-2');
+    </script></head><body><header><div id="header"><div id="schoolname"><a href="https://summer.harvard.edu/">Harvard Summer School</a></div><div id="coursename"><a href="https://cscis12.dce.harvard.edu/">CSCI S-12 Fundamentals of Web Site Development<span class="term">  |  Summer 2020</span></a></div></div></header><nav><div class="navprevnext"><a class="button previous" href="slide1.html" title="Session 05 - CSS Layout, Frameworks, and Preprocessors" accesskey="&lt;">◁ previous</a><span class="hide-for-localhost"> Slide 2</span><span class="hide-for-localhost"> | </span><a class="button next" href="slide3.html" title="Font - @font-face" accesskey="&gt;"> next  ▷</a></div></nav><main><h2 class="main">Fonts</h2><p>Two ways to deal with fonts:</p><ul><li>Rely on system fonts</li><li>Use web fonts to deliver font definition as part of the resources loaded by a page
+<ul><li><strong>load</strong> the font definition</li><li><strong>use</strong> in "font-family" CSS property</li></ul></li></ul><p>Note:</p><ul><li>hosted fonts or our fonts</li><li>multiple ways of loading fonts
+<ul><li><code>@import</code> in CSS
+</li><li><code>link</code> element in <code>head</code> of HTML</li><li>JavaScript</li></ul></li></ul><p>More resources:  </p><ul><li><a href="https://fonts.google.com/" shape="rect">Google Fonts</a></li><li><a href="https://muledesign.com/2015/05/web-fonts" shape="rect">Web Fonts:  They're Awesome!</a> from muledesign.com</li></ul></main><nav><div class="navprevnext"><a class="button previous" href="slide1.html" title="Session 05 - CSS Layout, Frameworks, and Preprocessors">◁ previous</a><span class="hide-for-localhost"> Slide 2</span><span class="hide-for-localhost"> | </span><a class="button next" href="slide3.html" title="Font - @font-face"> next  ▷</a></div><footer><a class="button toc" href="slide1.html">Table of Contents</a><a class="button cl" href="https://cscis12.dce.harvard.edu/">CSCI S-12</a><p class="copyright">Copyright © David Heitmeyer</p></footer></nav></body></html>

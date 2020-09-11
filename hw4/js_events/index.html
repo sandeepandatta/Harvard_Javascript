@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8" />
+  <title>Assignment - JavaScript Events</title>
+  <link rel="stylesheet" href="styles/style.css" />
+  <script src="scripts/events.js"></script>
+</head>
+
+<body onload="doWasJustLoaded()">
+  <h1>Illustrating JavaScript Events</h1>
+  <p id="status"><img src="images/blank.png" alt="event image" id="event_image" /><br />
+    <span id="statuscaption">Event images and messages will display here.</span></p>
+  <p><a id="mylink" href="#" onclick="doWasJustClicked(this)" >Lorem ipsum dolor</a></p>
+  <p id="mypara" class="p1" onmouseover= "doWasJustMousedOver(this)"  onmouseout="doWasJustMousedOut(this)">Mouseover and out of this paragraph. Lorem ipsum dolor sit amet, consectetur adipiscing
+    elit. Nulla vel risus at augue semper hendrerit.</p>
+  <form id="myform" action="https://cscis12.dce.harvard.edu/echo" onsubmit="return doWasJustSubmitted(this)">
+    <fieldset>
+      <legend>Form</legend>
+      <p>
+        <label for="myname">Name</label>
+        :<br />
+        <input id="myname" type="text" name="name" onfocus = "doWasJustFocusedOn(this)" onblur="doWasJustBlurredFrom(this)"/>
+      </p>
+      <p>
+        <input type="checkbox" id="optin" name="optin" value="Y" onclick="doWasJustClicked(this)" />
+        <label for="optin">Opt-in to receive promotional offers</label>
+      </p>
+      <p>Please select a direction:<br />
+        <select id="mydirection" name="direction" onchange = "doWasJustChanged(this)">
+          <option value="N">North</option>
+          <option value="S">South</option>
+          <option value="E">East</option>
+          <option value="W">West</option>
+        </select>
+      </p>
+      <p>
+        <input type="submit" name="Submit" value="Submit" />
+      </p>
+    </fieldset>
+  </form>
+</body>
+
+</html>

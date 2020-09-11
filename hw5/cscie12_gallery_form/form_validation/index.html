@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>A Form to Illustrate Validation using the jQuery Validation Plugin</title>
+  
+  <link rel="stylesheet"  href="form.css"/>
+  <link rel="stylesheet"  href="style2.css"/>
+<script
+  src="https://code.jquery.com/jquery-3.2.1.min.js"
+  integrity="sha256-hwg4gsxgFZhOsEEamdOYGBf13FyQuiTwlAQgxVSNgt4="
+  crossorigin="anonymous"></script>
+<script
+    src="https://cdnjs.cloudflare.com/ajax/libs/jquery-validate/1.17.0/jquery.validate.min.js">
+</script>
+<script >
+$(document).ready(function(){
+    $("#myForm").validate();
+});
+</script>
+</head>
+<body>
+  <form  id="myForm" method="post"
+    action="https://cscis12.dce.harvard.edu/echo">
+    <fieldset>
+      <legend>Information</legend>
+      <p>
+        <label for="name">Name</label> <em>(Required)</em>
+        <br/>
+        <input id="name" name="name" size="25" class="required"/> </p>
+      <p>
+        <label for="email">Email Address</label> <em>(Required)</em>
+        <br/>
+        <input id="email" name="email" size="25" class="required email"/> </p>
+      <p>
+        <label for="comment">Comments</label> <em>(Required)</em>
+        <br/>
+        <textarea rows="5" cols="50" id="comment" name="comment" class="required"></textarea>
+      <p>
+        <input class="submit" type="submit" value="Submit Form"/> </p>
+    </fieldset>
+  </form>
+</body>
+</html>

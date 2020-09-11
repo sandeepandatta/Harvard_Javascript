@@ -1,0 +1,23 @@
+<html><head><meta charset="utf-8"/><title>Slide 22 - Responsive Web Design § Session 05 - CSS Layout, Frameworks, and Preprocessors</title><meta name="lecture" content="5"/><meta name="date" content="Session 05"/><link rel="stylesheet" href="slide_cscis12-2020.css"/><link rel="stylesheet" href="resources/jquery/css/smoothness/jquery-ui.css"/><script src="resources/js/jquery-1.9.0.min.js"> </script><script src="resources/js/jquery-ui-1.10.0.custom.min.js"> </script><link rel="stylesheet" href="prism/prism.css"/><script src="prism/prism.js"> </script><script src="resources/js/site.js">/* site.js */</script><script>
+    $(document).ready(function(){
+      $('pre[class*="language-"]').addClass('prism');
+      $('pre[class*="language-"] code').addClass('prism');
+      $('code[class*="language-"]').addClass('prism');
+
+      console.log( $('*[id^=example-container]') );
+      $('*[id^=example-container]').each(function(index,elem){
+        $(elem).tabs({selected: $(elem).attr("data-tabselected")});
+      });
+
+      var $myhost = location.host;
+      if ($myhost.match(/localhost/)) {
+        $('.hide-for-localhost').hide();
+      }
+    });
+  </script><script async="async" src="https://www.googletagmanager.com/gtag/js?id=UA-2675499-2"/><script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+
+      gtag('config', 'UA-2675499-2');
+    </script></head><body><header><div id="header"><div id="schoolname"><a href="https://summer.harvard.edu/">Harvard Summer School</a></div><div id="coursename"><a href="https://cscis12.dce.harvard.edu/">CSCI S-12 Fundamentals of Web Site Development<span class="term">  |  Summer 2020</span></a></div></div></header><nav><div class="navprevnext"><a class="button previous" href="slide21.html" title="Responsive Web Design:  CSS Media Query" accesskey="&lt;">◁ previous</a><span class="hide-for-localhost"> Slide 22</span></div></nav><main><h2>Responsive Web Design</h2><ul><li><a href="https://www.abookapart.com/products/responsive-web-design" shape="rect">A Book Apart:  Responsive Web Design</a></li><li><a href="https://www.alistapart.com/articles/responsive-web-design/" shape="rect">Article: Responsive Web Design</a> by <a href="https://unstoppablerobotninja.com/" shape="rect">Ethan Marcotte</a> on <a href="https://www.alistapart.com/" shape="rect">A List Apart</a></li><li><a href="https://alistapart.com/topic/responsive-design" shape="rect">A List Apart:  Responsive Design Articles</a></li></ul><p><a href="https://www.abookapart.com/products/responsive-web-design" shape="rect"><img src="https://cdn.shopify.com/s/files/1/0051/7692/products/ABA-hero-4_c97486bb-368b-4a52-8d53-72e7d35848e0.jpg?v=1417531418" height="300" alt="Book: Responsive Web Design"/></a></p></main><nav><div class="navprevnext"><a class="button previous" href="slide21.html" title="Responsive Web Design:  CSS Media Query">◁ previous</a><span class="hide-for-localhost"> Slide 22</span></div><footer><a class="button toc" href="slide1.html">Table of Contents</a><a class="button cl" href="https://cscis12.dce.harvard.edu/">CSCI S-12</a><p class="copyright">Copyright © David Heitmeyer</p></footer></nav></body></html>

@@ -1,0 +1,65 @@
+<html><head><meta charset="utf-8"/><title>Slide 16 - Layouts with CSS Flex § Session 05 - CSS Layout, Frameworks, and Preprocessors</title><meta name="lecture" content="5"/><meta name="date" content="Session 05"/><link rel="stylesheet" href="slide_cscis12-2020.css"/><link rel="stylesheet" href="resources/jquery/css/smoothness/jquery-ui.css"/><script src="resources/js/jquery-1.9.0.min.js"> </script><script src="resources/js/jquery-ui-1.10.0.custom.min.js"> </script><link rel="stylesheet" href="prism/prism.css"/><script src="prism/prism.js"> </script><script src="resources/js/site.js">/* site.js */</script><script>
+    $(document).ready(function(){
+      $('pre[class*="language-"]').addClass('prism');
+      $('pre[class*="language-"] code').addClass('prism');
+      $('code[class*="language-"]').addClass('prism');
+
+      console.log( $('*[id^=example-container]') );
+      $('*[id^=example-container]').each(function(index,elem){
+        $(elem).tabs({selected: $(elem).attr("data-tabselected")});
+      });
+
+      var $myhost = location.host;
+      if ($myhost.match(/localhost/)) {
+        $('.hide-for-localhost').hide();
+      }
+    });
+  </script><script async="async" src="https://www.googletagmanager.com/gtag/js?id=UA-2675499-2"/><script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+
+      gtag('config', 'UA-2675499-2');
+    </script></head><body><header><div id="header"><div id="schoolname"><a href="https://summer.harvard.edu/">Harvard Summer School</a></div><div id="coursename"><a href="https://cscis12.dce.harvard.edu/">CSCI S-12 Fundamentals of Web Site Development<span class="term">  |  Summer 2020</span></a></div></div></header><nav><div class="navprevnext"><a class="button previous" href="slide15.html" title="More complex layouts" accesskey="&lt;">◁ previous</a><span class="hide-for-localhost"> Slide 16</span><span class="hide-for-localhost"> | </span><a class="button next" href="slide17.html" title="flex-basis" accesskey="&gt;"> next  ▷</a></div></nav><main><h2 class="main">Layouts with CSS Flex</h2><ol><li>Set up your flex container</li><li>Set the "flex" property on things within your container</li></ol><div style="margin-top: 1.5em;"><strong><a name="5">Example
+            5.5</a> - Flex</strong> - <a href="example5.html">Example 5.5</a><span style="font-size: smaller;"> (<a href="example_nostyle5.html">Without Styles</a>)</span><form style="margin-left: 1em; display: inline;" method="post" target="fiddle" id="d2196e544" action="https://jsfiddle.net/api/post/library/pure/"><textarea name="html" style="display: none;" class="example" title="Flex"><div id="f1container"><div class="box box1">1</div><div class="box box2">2</div><div class="box box3">3</div><div class="box box4">4</div><div class="box box5">5</div></div></textarea><textarea name="css" style="display: none;">.box {
+  padding: 2em;
+  border: medium solid black;
+  width: 3em;
+}
+#f1container {
+  display: flex;
+}
+</textarea><input name="html_panel" value="0"/><input name="css_panel" value="0"/><input name="js_panel" value="0"/><input name="title" value="Flex"/><input name="description" value=""/><input name="dtd" value="html 5"/><input name="wrap" value="h"/><input class="jsfiddlesubmit" value="JSFiddle - Example 5.5" name="submit"/></form></div><div id="example-container5" data-tabselected="0"><ul><li><a href="#fragment-5-source"><span>Markup</span></a></li><li><a href="#fragment-5-style"><span>Style</span></a></li><li><a href="#fragment-5-display"><span>Display</span></a></li></ul><div id="fragment-5-source"><pre name="code" class="line-numbers language-html"><code> 
+ &lt;div id="f1container"&gt;
+   &lt;div class="box box1"&gt;1
+   &lt;/div&gt;
+   &lt;div class="box box2"&gt;2
+   &lt;/div&gt;
+   &lt;div class="box box3"&gt;3
+   &lt;/div&gt;
+   &lt;div class="box box4"&gt;4
+   &lt;/div&gt;
+   &lt;div class="box box5"&gt;5
+   &lt;/div&gt;
+ &lt;/div&gt;</code></pre></div><div id="fragment-5-style"><p> In <code>style</code>
+      element
+      (<code>&lt;style&gt;</code>) within <code> head</code> element:
+      <br/></p><pre name="code" class="language-css line-numbers"><code>.box {
+  padding: 2em;
+  border: medium solid black;
+  width: 3em;
+}
+#f1container {
+  display: flex;
+}
+</code></pre></div><div id="fragment-5-display"><div class="rendered"><div class="example" title="Flex"><style>.box {
+  padding: 2em;
+  border: medium solid black;
+  width: 3em;
+}
+#f1container {
+  display: flex;
+}
+</style><div id="f1container"><div class="box box1">1</div><div class="box box2">2</div><div class="box box3">3</div><div class="box box4">4</div><div class="box box5">5</div></div></div></div>
+         
+      </div></div></main><nav><div class="navprevnext"><a class="button previous" href="slide15.html" title="More complex layouts">◁ previous</a><span class="hide-for-localhost"> Slide 16</span><span class="hide-for-localhost"> | </span><a class="button next" href="slide17.html" title="flex-basis"> next  ▷</a></div><footer><a class="button toc" href="slide1.html">Table of Contents</a><a class="button cl" href="https://cscis12.dce.harvard.edu/">CSCI S-12</a><p class="copyright">Copyright © David Heitmeyer</p></footer></nav></body></html>

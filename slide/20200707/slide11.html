@@ -1,0 +1,25 @@
+<html><head><meta charset="utf-8"/><title>Slide 11 - CSS and Layouts § Session 05 - CSS Layout, Frameworks, and Preprocessors</title><meta name="lecture" content="5"/><meta name="date" content="Session 05"/><link rel="stylesheet" href="slide_cscis12-2020.css"/><link rel="stylesheet" href="resources/jquery/css/smoothness/jquery-ui.css"/><script src="resources/js/jquery-1.9.0.min.js"> </script><script src="resources/js/jquery-ui-1.10.0.custom.min.js"> </script><link rel="stylesheet" href="prism/prism.css"/><script src="prism/prism.js"> </script><script src="resources/js/site.js">/* site.js */</script><script>
+    $(document).ready(function(){
+      $('pre[class*="language-"]').addClass('prism');
+      $('pre[class*="language-"] code').addClass('prism');
+      $('code[class*="language-"]').addClass('prism');
+
+      console.log( $('*[id^=example-container]') );
+      $('*[id^=example-container]').each(function(index,elem){
+        $(elem).tabs({selected: $(elem).attr("data-tabselected")});
+      });
+
+      var $myhost = location.host;
+      if ($myhost.match(/localhost/)) {
+        $('.hide-for-localhost').hide();
+      }
+    });
+  </script><script async="async" src="https://www.googletagmanager.com/gtag/js?id=UA-2675499-2"/><script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+
+      gtag('config', 'UA-2675499-2');
+    </script></head><body><header><div id="header"><div id="schoolname"><a href="https://summer.harvard.edu/">Harvard Summer School</a></div><div id="coursename"><a href="https://cscis12.dce.harvard.edu/">CSCI S-12 Fundamentals of Web Site Development<span class="term">  |  Summer 2020</span></a></div></div></header><nav><div class="navprevnext"><a class="button previous" href="slide10.html" title="CSS Normalize" accesskey="&lt;">◁ previous</a><span class="hide-for-localhost"> Slide 11</span><span class="hide-for-localhost"> | </span><a class="button next" href="slide12.html" title="CSS for Page Layout: Fixed Width" accesskey="&gt;"> next  ▷</a></div></nav><main><h2 class="main">CSS and Layouts</h2><ul><li><strong>Fixed Width</strong><br/>
+      define width in pixels</li><li><strong>Fluid / Liquid / Elastic</strong><ul><li><strong>Fluid / Liquid</strong><br/>
+      define widths in percentages (relative to browser window)</li><li><strong>Elastic</strong><br/>define widths in <code>em</code> units (relative to font-size)</li></ul></li><li><strong>Responsive</strong><br/>changes based upon browser window size</li></ul></main><nav><div class="navprevnext"><a class="button previous" href="slide10.html" title="CSS Normalize">◁ previous</a><span class="hide-for-localhost"> Slide 11</span><span class="hide-for-localhost"> | </span><a class="button next" href="slide12.html" title="CSS for Page Layout: Fixed Width"> next  ▷</a></div><footer><a class="button toc" href="slide1.html">Table of Contents</a><a class="button cl" href="https://cscis12.dce.harvard.edu/">CSCI S-12</a><p class="copyright">Copyright © David Heitmeyer</p></footer></nav></body></html>

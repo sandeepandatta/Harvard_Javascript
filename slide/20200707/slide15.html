@@ -1,0 +1,149 @@
+<html><head><meta charset="utf-8"/><title>Slide 15 - More complex layouts § Session 05 - CSS Layout, Frameworks, and Preprocessors</title><meta name="lecture" content="5"/><meta name="date" content="Session 05"/><link rel="stylesheet" href="slide_cscis12-2020.css"/><link rel="stylesheet" href="resources/jquery/css/smoothness/jquery-ui.css"/><script src="resources/js/jquery-1.9.0.min.js"> </script><script src="resources/js/jquery-ui-1.10.0.custom.min.js"> </script><link rel="stylesheet" href="prism/prism.css"/><script src="prism/prism.js"> </script><script src="resources/js/site.js">/* site.js */</script><script>
+    $(document).ready(function(){
+      $('pre[class*="language-"]').addClass('prism');
+      $('pre[class*="language-"] code').addClass('prism');
+      $('code[class*="language-"]').addClass('prism');
+
+      console.log( $('*[id^=example-container]') );
+      $('*[id^=example-container]').each(function(index,elem){
+        $(elem).tabs({selected: $(elem).attr("data-tabselected")});
+      });
+
+      var $myhost = location.host;
+      if ($myhost.match(/localhost/)) {
+        $('.hide-for-localhost').hide();
+      }
+    });
+  </script><script async="async" src="https://www.googletagmanager.com/gtag/js?id=UA-2675499-2"/><script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+
+      gtag('config', 'UA-2675499-2');
+    </script></head><body><header><div id="header"><div id="schoolname"><a href="https://summer.harvard.edu/">Harvard Summer School</a></div><div id="coursename"><a href="https://cscis12.dce.harvard.edu/">CSCI S-12 Fundamentals of Web Site Development<span class="term">  |  Summer 2020</span></a></div></div></header><nav><div class="navprevnext"><a class="button previous" href="slide14.html" title="Elastic Layouts" accesskey="&lt;">◁ previous</a><span class="hide-for-localhost"> Slide 15</span><span class="hide-for-localhost"> | </span><a class="button next" href="slide16.html" title="Layouts with CSS Flex" accesskey="&gt;"> next  topic ▷</a></div></nav><main><h2>More complex layouts</h2><p>header, footer, navigation, primary content, secondary content</p><p><img src="images/layoutv2-1.png" alt="layout"/></p><p><img src="images/layoutv2-2.png" alt="layout"/></p><div style="margin-top: 1.5em;"><strong><a name="4">Example
+            5.4</a> - CSS Page Layout: 3 columns</strong> - <a href="example4.html">Example 5.4</a><span style="font-size: smaller;"> (<a href="example_nostyle4.html">Without Styles</a>)</span><form style="margin-left: 1em; display: inline;" method="post" target="fiddle" id="d2209e472" action="https://jsfiddle.net/api/post/library/pure/"><textarea name="html" style="display: none;" class="example" title="CSS Page Layout: 3 columns"><div id="wrapper"><div id="header"><h1>Lorem ipsum dolor sit</h1></div><div id="maincontent"><div id="primary"><p>Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Sed feugiat nisi
+              at sapien. Phasellus varius tincidunt ligula. Praesent nisi. Duis
+              sollicitudin. Donec dignissim, est vel auctor blandit, ante est laoreet
+              neque, non pellentesque mauris turpis eu purus. </p><p>Suspendisse mollis leo nec diam. Vestibulum pulvinar tellus sit amet nulla
+              fringilla semper. Aenean aliquam, urna et accumsan sollicitudin, tellus
+              pede lobortis velit, nec placerat dolor pede nec nibh. Donec fringilla. Duis
+              adipiscing diam at enim. Vestibulum nibh.</p><p>Nulla facilisi. Aliquam dapibus leo eget leo. Etiam vitae turpis sit amet
+              massa posuere cursus. Sed vitae justo quis tortor facilisis ultrices.
+              Integer id erat. Donec at felis ut erat interdum vestibulum. Quisque et eros.
+              Donec fringilla, est in condimentum venenatis, tortor velit vehicula sem, in
+              elementum quam sapien eu lectus. In dolor urna, ullamcorper vel, tempor sit
+              amet, semper ut, felis. Praesent nisi. </p></div><div id="secondary"><p>Fusce scelerisque viverra quam. Nam urna. Nullam urna libero, euismod at,
+              euismod sit amet, porttitor ac, mauris.</p><p>Vestibulum interdum aliquet lacus. Vestibulum egestas. Fusce adipiscing
+              quam sed metus.</p><p>Nullam dignissim aliquam dui. Proin laoreet, elit sed pulvinar
+              sollicitudin, urna arcu fermentum felis, in rhoncus nunc neque vitae
+              libero.</p></div></div><div id="navigation"><ul><li>Mauris</li><li>Cras</li><li>Proin</li><li>Integer</li><li>Curabitur</li><li>Integer</li><li>Suspendisse</li><li>Quisque</li></ul></div><div id="footer"> Proin quis orci eu erat molestie varius. Praesent condimentum
+          orci in lectus. Ut ipsum. In hac habitasse platea dictumst. </div></div></textarea><textarea name="css" style="display: none;">#wrapper {
+    width: 750px;
+    margin: 0 auto;
+    }
+#header {
+    width: 100%;
+    background-color: #fcf;
+    }
+#footer {
+    clear: both;
+    background-color: #ffc;
+    }
+#navigation {
+    width: 160px;
+    float: left;
+    background-color: #fcc;
+    }
+#maincontent {
+    width: 590px;
+    float: right;
+        }
+#primary {
+    width: 400px;
+    float: left;
+    background-color: #cfc;
+}
+#secondary {
+   width: 190px;
+   float: right;
+   background-color: #cff;
+}</textarea><input name="html_panel" value="0"/><input name="css_panel" value="0"/><input name="js_panel" value="0"/><input name="title" value="CSS Page Layout: 3 columns"/><input name="description" value=""/><input name="dtd" value="html 5"/><input name="wrap" value="h"/><input class="jsfiddlesubmit" value="JSFiddle - Example 5.4" name="submit"/></form></div><div id="example-container4" data-tabselected="0"><ul><li><a href="#fragment-4-source"><span>Markup</span></a></li><li><a href="#fragment-4-style"><span>Style</span></a></li></ul><div id="fragment-4-source"><pre name="code" class="line-numbers language-html"><code> 
+ &lt;div id="wrapper"&gt;
+   &lt;div id="header"&gt;
+     &lt;h1&gt;Lorem ipsum dolor sit     &lt;/h1&gt;
+   &lt;/div&gt;
+   &lt;div id="maincontent"&gt;
+     &lt;div id="primary"&gt;
+       &lt;p&gt;Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Sed feugiat nisi at sapien. Phasellus varius tincidunt ligula. Praesent nisi. Duis sollicitudin. Donec dignissim, est vel auctor blandit, ante est laoreet neque, non pellentesque mauris turpis eu purus.
+       &lt;/p&gt;
+       &lt;p&gt;Suspendisse mollis leo nec diam. Vestibulum pulvinar tellus sit amet nulla fringilla semper. Aenean aliquam, urna et accumsan sollicitudin, tellus pede lobortis velit, nec placerat dolor pede nec nibh. Donec fringilla. Duis adipiscing diam at enim. Vestibulum nibh.
+       &lt;/p&gt;
+       &lt;p&gt;Nulla facilisi. Aliquam dapibus leo eget leo. Etiam vitae turpis sit amet massa posuere cursus. Sed vitae justo quis tortor facilisis ultrices. Integer id erat. Donec at felis ut erat interdum vestibulum. Quisque et eros. Donec fringilla, est in condimentum venenatis, tortor velit vehicula sem, in elementum quam sapien eu lectus. In dolor urna, ullamcorper vel, tempor sit amet, semper ut, felis. Praesent nisi.
+       &lt;/p&gt;
+     &lt;/div&gt;
+     &lt;div id="secondary"&gt;
+       &lt;p&gt;Fusce scelerisque viverra quam. Nam urna. Nullam urna libero, euismod at, euismod sit amet, porttitor ac, mauris.
+       &lt;/p&gt;
+       &lt;p&gt;Vestibulum interdum aliquet lacus. Vestibulum egestas. Fusce adipiscing quam sed metus.
+       &lt;/p&gt;
+       &lt;p&gt;Nullam dignissim aliquam dui. Proin laoreet, elit sed pulvinar sollicitudin, urna arcu fermentum felis, in rhoncus nunc neque vitae libero.
+       &lt;/p&gt;
+     &lt;/div&gt;
+   &lt;/div&gt;
+   &lt;div id="navigation"&gt;
+     &lt;ul&gt;
+       &lt;li&gt;Mauris
+       &lt;/li&gt;
+       &lt;li&gt;Cras
+       &lt;/li&gt;
+       &lt;li&gt;Proin
+       &lt;/li&gt;
+       &lt;li&gt;Integer
+       &lt;/li&gt;
+       &lt;li&gt;Curabitur
+       &lt;/li&gt;
+       &lt;li&gt;Integer
+       &lt;/li&gt;
+       &lt;li&gt;Suspendisse
+       &lt;/li&gt;
+       &lt;li&gt;Quisque
+       &lt;/li&gt;     &lt;/ul&gt;
+   &lt;/div&gt;
+   &lt;div id="footer"&gt;Proin quis orci eu erat molestie varius. Praesent condimentum orci in lectus. Ut ipsum. In hac habitasse platea dictumst.
+   &lt;/div&gt;
+ &lt;/div&gt;</code></pre></div><div id="fragment-4-style"><p> In <code>style</code>
+      element
+      (<code>&lt;style&gt;</code>) within <code> head</code> element:
+      <br/></p><pre name="code" class="language-css line-numbers"><code>#wrapper {
+    width: 750px;
+    margin: 0 auto;
+    }
+#header {
+    width: 100%;
+    background-color: #fcf;
+    }
+#footer {
+    clear: both;
+    background-color: #ffc;
+    }
+#navigation {
+    width: 160px;
+    float: left;
+    background-color: #fcc;
+    }
+#maincontent {
+    width: 590px;
+    float: right;
+        }
+#primary {
+    width: 400px;
+    float: left;
+    background-color: #cfc;
+}
+#secondary {
+   width: 190px;
+   float: right;
+   background-color: #cff;
+}</code></pre></div><div id="fragment-4-display"><!--example rendered as a separate document-->
+         
+      </div></div></main><nav><div class="navprevnext"><a class="button previous" href="slide14.html" title="Elastic Layouts">◁ previous</a><span class="hide-for-localhost"> Slide 15</span><span class="hide-for-localhost"> | </span><a class="button next" href="slide16.html" title="Layouts with CSS Flex"> next  topic ▷</a></div><footer><a class="button toc" href="slide1.html">Table of Contents</a><a class="button cl" href="https://cscis12.dce.harvard.edu/">CSCI S-12</a><p class="copyright">Copyright © David Heitmeyer</p></footer></nav></body></html>

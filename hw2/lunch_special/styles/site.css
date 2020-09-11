@@ -1,0 +1,32 @@
+fieldset{
+    border-color:goldenrod;
+    border-style: solid;
+    background-color: white;
+    max-width:80%;
+    text-align: justify;
+    font-family: helvetica, sans-serif;
+    
+    
+}
+
+body{
+
+    background-color:#ffffcc;
+    max-width:80%;
+    padding: 10px;
+    margin:auto;
+    
+    
+    }
+p, input, select {
+    margin-left: 2em;
+    
+}
+
+div {
+    margin-left: 1em;
+}
+
+h1{
+    margin-left: 0.5em;
+}

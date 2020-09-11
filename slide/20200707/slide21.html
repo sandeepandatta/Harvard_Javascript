@@ -1,0 +1,28 @@
+<html><head><meta charset="utf-8"/><title>Slide 21 - Responsive Web Design:  CSS Media Query § Session 05 - CSS Layout, Frameworks, and Preprocessors</title><meta name="lecture" content="5"/><meta name="date" content="Session 05"/><link rel="stylesheet" href="slide_cscis12-2020.css"/><link rel="stylesheet" href="resources/jquery/css/smoothness/jquery-ui.css"/><script src="resources/js/jquery-1.9.0.min.js"> </script><script src="resources/js/jquery-ui-1.10.0.custom.min.js"> </script><link rel="stylesheet" href="prism/prism.css"/><script src="prism/prism.js"> </script><script src="resources/js/site.js">/* site.js */</script><script>
+    $(document).ready(function(){
+      $('pre[class*="language-"]').addClass('prism');
+      $('pre[class*="language-"] code').addClass('prism');
+      $('code[class*="language-"]').addClass('prism');
+
+      console.log( $('*[id^=example-container]') );
+      $('*[id^=example-container]').each(function(index,elem){
+        $(elem).tabs({selected: $(elem).attr("data-tabselected")});
+      });
+
+      var $myhost = location.host;
+      if ($myhost.match(/localhost/)) {
+        $('.hide-for-localhost').hide();
+      }
+    });
+  </script><script async="async" src="https://www.googletagmanager.com/gtag/js?id=UA-2675499-2"/><script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+
+      gtag('config', 'UA-2675499-2');
+    </script></head><body><header><div id="header"><div id="schoolname"><a href="https://summer.harvard.edu/">Harvard Summer School</a></div><div id="coursename"><a href="https://cscis12.dce.harvard.edu/">CSCI S-12 Fundamentals of Web Site Development<span class="term">  |  Summer 2020</span></a></div></div></header><nav><div class="navprevnext"><a class="button previous" href="slide20.html" title="Responsive Layouts" accesskey="&lt;">◁ previous</a><span class="hide-for-localhost"> Slide 21</span><span class="hide-for-localhost"> | </span><a class="button next" href="slide22.html" title="Responsive Web Design" accesskey="&gt;"> next  ▷</a></div></nav><main><h2>Responsive Web Design:  CSS Media Query</h2><p>Media queries can be used to include style sheets (<code>media</code> attribute) or in CSS rules (<code>@media</code> rule) or <code>@import</code> statement</p><p>Link to stylesheet</p><pre name="code" class="language-markup line-numbers"><code>&lt;link rel="stylesheet" type="text/css"
+  media="screen and (max-device-width: 480px)"
+  href="smallscreen.css" /&gt;</code></pre><p>CSS rule</p><pre name="code" class="language-css line-numbers"><code>@media screen and (max-device-width: 480px) {
+  /* rules for small screens */
+  .column { float: none; }
+}</code></pre><p>@import statement</p><pre name="code" class="language-css line-numbers"><code>@import url('smallscreen.css') screen and (max-device-width: 480px);</code></pre><hr/><ul><li><a href="https://www.alistapart.com/articles/responsive-web-design/" shape="rect">Responsive Web Design</a> by <a href="https://unstoppablerobotninja.com/" shape="rect">Ethan Marcotte</a> on <a href="https://www.alistapart.com/" shape="rect">A List Apart</a></li><li><a href="https://www.alistapart.com/d/responsive-web-design/ex/ex-site-larger.html" shape="rect">Live Example</a></li></ul><p><img src="images/responsive-1310.png" alt="responsive wide screen"/></p><p><img src="images/responsive-800.png" alt="responsive medium screen"/></p><p><img src="images/responsive-480.png" alt="responsive small screen"/></p></main><nav><div class="navprevnext"><a class="button previous" href="slide20.html" title="Responsive Layouts">◁ previous</a><span class="hide-for-localhost"> Slide 21</span><span class="hide-for-localhost"> | </span><a class="button next" href="slide22.html" title="Responsive Web Design"> next  ▷</a></div><footer><a class="button toc" href="slide1.html">Table of Contents</a><a class="button cl" href="https://cscis12.dce.harvard.edu/">CSCI S-12</a><p class="copyright">Copyright © David Heitmeyer</p></footer></nav></body></html>

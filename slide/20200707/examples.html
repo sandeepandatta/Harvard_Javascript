@@ -1,0 +1,249 @@
+<html><head><meta charset="utf-8"/><title>Session 05 - CSS Layout, Frameworks, and Preprocessors</title><meta name="lecture" content="5"/><meta name="date" content="Session 05"/><link rel="stylesheet" href="slide_cscis12-2020.css"/><link rel="stylesheet" href="resources/jquery/css/smoothness/jquery-ui.css"/><script src="resources/js/jquery-1.9.0.min.js"> </script><script src="resources/js/jquery-ui-1.10.0.custom.min.js"> </script><link rel="stylesheet" href="prism/prism.css"/><script src="prism/prism.js"> </script><script src="resources/js/site.js">/* site.js */</script><script>
+    $(document).ready(function(){
+      $('pre[class*="language-"]').addClass('prism');
+      $('pre[class*="language-"] code').addClass('prism');
+      $('code[class*="language-"]').addClass('prism');
+
+      console.log( $('*[id^=example-container]') );
+      $('*[id^=example-container]').each(function(index,elem){
+        $(elem).tabs({selected: $(elem).attr("data-tabselected")});
+      });
+
+      var $myhost = location.host;
+      if ($myhost.match(/localhost/)) {
+        $('.hide-for-localhost').hide();
+      }
+    });
+  </script><script async="async" src="https://www.googletagmanager.com/gtag/js?id=UA-2675499-2"/><script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+
+      gtag('config', 'UA-2675499-2');
+    </script></head><body><header><div id="header"><div id="schoolname"><a href="https://summer.harvard.edu/">Harvard Summer School</a></div><div id="coursename"><a href="https://cscis12.dce.harvard.edu/">CSCI S-12 Fundamentals of Web Site Development<span class="term">  |  Summer 2020</span></a></div></div></header><nav><div class="navprevnext"><a class="button" href="slide1.html">Table of Contents</a></div></nav><main><h1>Session 05 - CSS Layout, Frameworks, and Preprocessors<br/>
+      Examples
+    </h1><ul><li><a href="example1.html">Example 5.1 - CSS Page Layout: Fixed Width</a>  
+  <form style="margin-left: 1em; display: inline;" method="post" target="fiddle" id="d2216e285" action="https://jsfiddle.net/api/post/library/pure/"><textarea name="html" style="display: none;" class="example" title="CSS Page Layout: Fixed Width"><div id="wrapper"><div id="header"><h1>Lorem ipsum dolor sit</h1></div><div id="maincontent"><p>Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Sed feugiat nisi at sapien.
+      Phasellus varius tincidunt ligula. Praesent nisi. Duis sollicitudin. Donec
+      dignissim, est vel auctor blandit, ante est laoreet neque, non pellentesque mauris
+      turpis eu purus. </p><p>Suspendisse mollis leo nec diam. Vestibulum pulvinar tellus sit amet nulla fringilla
+      semper. Aenean aliquam, urna et accumsan sollicitudin, tellus pede lobortis velit,
+      nec placerat dolor pede nec nibh. Donec fringilla. Duis adipiscing diam at enim.
+      Vestibulum nibh.</p><p>Nulla facilisi. Aliquam dapibus leo eget leo. Etiam vitae turpis sit amet massa
+      posuere cursus. Sed vitae justo quis tortor facilisis ultrices. Integer id erat. Donec
+      at felis ut erat interdum vestibulum. Quisque et eros. Donec fringilla, est in
+      condimentum venenatis, tortor velit vehicula sem, in elementum quam sapien eu lectus.
+      In dolor urna, ullamcorper vel, tempor sit amet, semper ut, felis. Praesent nisi. </p></div><div id="navigation"><ul><li>Mauris</li><li>Cras</li><li>Proin</li><li>Integer</li><li>Curabitur</li><li>Integer</li><li>Suspendisse</li><li>Quisque</li></ul></div><div id="footer"> Proin quis orci eu erat molestie varius. Praesent condimentum orci in
+    lectus. Ut ipsum. In hac habitasse platea dictumst. </div></div></textarea><textarea name="css" style="display: none;">#wrapper {
+    width: 750px;
+    margin: 0 auto;
+    }
+#header {
+    width: 100%;
+    background-color: #ccc;
+    }
+#footer {
+    clear: both;
+    background-color: #ccf;
+    }
+#navigation {
+    width: 160px;
+    float: left;
+    background-color: #fcc;
+    }
+#maincontent {
+    width: 540px;
+    float: right;
+    background-color: #cfc;
+} </textarea><input name="html_panel" value="0"/><input name="css_panel" value="0"/><input name="js_panel" value="0"/><input name="title" value="CSS Page Layout: Fixed Width"/><input name="description" value=""/><input name="dtd" value="html 5"/><input name="wrap" value="h"/><input class="jsfiddlesubmit" value="JSFiddle - Example 5.1" name="submit"/></form></li><li><a href="example2.html">Example 5.2 - CSS Page Layout: Liquid</a>  
+  <form style="margin-left: 1em; display: inline;" method="post" target="fiddle" id="d2216e328" action="https://jsfiddle.net/api/post/library/pure/"><textarea name="html" style="display: none;" class="example" title="CSS Page Layout: Liquid"><div id="wrapper"><div id="header"><h1>Lorem ipsum dolor sit</h1></div><div id="maincontent"><p>Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Sed feugiat nisi at sapien.
+      Phasellus varius tincidunt ligula. Praesent nisi. Duis sollicitudin. Donec
+      dignissim, est vel auctor blandit, ante est laoreet neque, non pellentesque mauris
+      turpis eu purus. </p><p>Suspendisse mollis leo nec diam. Vestibulum pulvinar tellus sit amet nulla fringilla
+      semper. Aenean aliquam, urna et accumsan sollicitudin, tellus pede lobortis velit,
+      nec placerat dolor pede nec nibh. Donec fringilla. Duis adipiscing diam at enim.
+      Vestibulum nibh.</p><p>Nulla facilisi. Aliquam dapibus leo eget leo. Etiam vitae turpis sit amet massa
+      posuere cursus. Sed vitae justo quis tortor facilisis ultrices. Integer id erat. Donec
+      at felis ut erat interdum vestibulum. Quisque et eros. Donec fringilla, est in
+      condimentum venenatis, tortor velit vehicula sem, in elementum quam sapien eu lectus.
+      In dolor urna, ullamcorper vel, tempor sit amet, semper ut, felis. Praesent nisi. </p></div><div id="navigation"><ul><li>Mauris</li><li>Cras</li><li>Proin</li><li>Integer</li><li>Curabitur</li><li>Integer</li><li>Suspendisse</li><li>Quisque</li></ul></div><div id="footer"> Proin quis orci eu erat molestie varius. Praesent condimentum orci in
+    lectus. Ut ipsum. In hac habitasse platea dictumst. </div></div></textarea><textarea name="css" style="display: none;">#wrapper {
+    width: 90%;
+    margin: 0 auto;
+    }
+#header {
+    width: 100%;
+    background-color: #ccc;
+    }
+#footer {
+    clear: both;
+    background-color: #ccf;
+    }
+#navigation {
+    width: 30%;
+    float: left;
+    background-color: #fcc;
+    }
+#maincontent {
+    width: 70%;
+    float: right;
+    background-color: #cfc;
+} </textarea><input name="html_panel" value="0"/><input name="css_panel" value="0"/><input name="js_panel" value="0"/><input name="title" value="CSS Page Layout: Liquid"/><input name="description" value=""/><input name="dtd" value="html 5"/><input name="wrap" value="h"/><input class="jsfiddlesubmit" value="JSFiddle - Example 5.2" name="submit"/></form></li><li><a href="example3.html">Example 5.3 - CSS Page Layout: Elastic</a>  
+  <form style="margin-left: 1em; display: inline;" method="post" target="fiddle" id="d2216e368" action="https://jsfiddle.net/api/post/library/pure/"><textarea name="html" style="display: none;" class="example" title="CSS Page Layout: Elastic"><div id="wrapper"><div id="header"><h1>Lorem ipsum dolor sit</h1></div><div id="maincontent"><p>Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Sed feugiat nisi at sapien.
+      Phasellus varius tincidunt ligula. Praesent nisi. Duis sollicitudin. Donec
+      dignissim, est vel auctor blandit, ante est laoreet neque, non pellentesque mauris
+      turpis eu purus. </p><p>Suspendisse mollis leo nec diam. Vestibulum pulvinar tellus sit amet nulla fringilla
+      semper. Aenean aliquam, urna et accumsan sollicitudin, tellus pede lobortis velit,
+      nec placerat dolor pede nec nibh. Donec fringilla. Duis adipiscing diam at enim.
+      Vestibulum nibh.</p><p>Nulla facilisi. Aliquam dapibus leo eget leo. Etiam vitae turpis sit amet massa
+      posuere cursus. Sed vitae justo quis tortor facilisis ultrices. Integer id erat. Donec
+      at felis ut erat interdum vestibulum. Quisque et eros. Donec fringilla, est in
+      condimentum venenatis, tortor velit vehicula sem, in elementum quam sapien eu lectus.
+      In dolor urna, ullamcorper vel, tempor sit amet, semper ut, felis. Praesent nisi. </p></div><div id="navigation"><ul><li>Mauris</li><li>Cras</li><li>Proin</li><li>Integer</li><li>Curabitur</li><li>Integer</li><li>Suspendisse</li><li>Quisque</li></ul></div><div id="footer"> Proin quis orci eu erat molestie varius. Praesent condimentum orci in
+    lectus. Ut ipsum. In hac habitasse platea dictumst. </div></div></textarea><textarea name="css" style="display: none;"> body {
+    font-family: Lucida Grande, Verdana, serif;
+    }
+#wrapper {
+    width: 45em;
+    margin: 0 auto;
+    border: medium solid black;
+    }
+#header {
+    width: 44em;
+    padding: 0.5em;
+    background-color: #ccc;
+    }
+#footer {
+    width: 44em;
+    padding: 0.5em;
+    clear: both;
+    background-color: #ccf;
+    }
+#navigation {
+    width: 13em;
+    padding: 0.5em;
+    float: left;
+    background-color: #fcc;
+    }
+#maincontent {
+    width: 30em;
+    padding: 0.5em;
+    float: right;
+    background-color: #cfc;
+} </textarea><input name="html_panel" value="0"/><input name="css_panel" value="0"/><input name="js_panel" value="0"/><input name="title" value="CSS Page Layout: Elastic"/><input name="description" value=""/><input name="dtd" value="html 5"/><input name="wrap" value="h"/><input class="jsfiddlesubmit" value="JSFiddle - Example 5.3" name="submit"/></form></li><li><a href="example4.html">Example 5.4 - CSS Page Layout: 3 columns</a>  
+  <form style="margin-left: 1em; display: inline;" method="post" target="fiddle" id="d2216e411" action="https://jsfiddle.net/api/post/library/pure/"><textarea name="html" style="display: none;" class="example" title="CSS Page Layout: 3 columns"><div id="wrapper"><div id="header"><h1>Lorem ipsum dolor sit</h1></div><div id="maincontent"><div id="primary"><p>Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Sed feugiat nisi
+              at sapien. Phasellus varius tincidunt ligula. Praesent nisi. Duis
+              sollicitudin. Donec dignissim, est vel auctor blandit, ante est laoreet
+              neque, non pellentesque mauris turpis eu purus. </p><p>Suspendisse mollis leo nec diam. Vestibulum pulvinar tellus sit amet nulla
+              fringilla semper. Aenean aliquam, urna et accumsan sollicitudin, tellus
+              pede lobortis velit, nec placerat dolor pede nec nibh. Donec fringilla. Duis
+              adipiscing diam at enim. Vestibulum nibh.</p><p>Nulla facilisi. Aliquam dapibus leo eget leo. Etiam vitae turpis sit amet
+              massa posuere cursus. Sed vitae justo quis tortor facilisis ultrices.
+              Integer id erat. Donec at felis ut erat interdum vestibulum. Quisque et eros.
+              Donec fringilla, est in condimentum venenatis, tortor velit vehicula sem, in
+              elementum quam sapien eu lectus. In dolor urna, ullamcorper vel, tempor sit
+              amet, semper ut, felis. Praesent nisi. </p></div><div id="secondary"><p>Fusce scelerisque viverra quam. Nam urna. Nullam urna libero, euismod at,
+              euismod sit amet, porttitor ac, mauris.</p><p>Vestibulum interdum aliquet lacus. Vestibulum egestas. Fusce adipiscing
+              quam sed metus.</p><p>Nullam dignissim aliquam dui. Proin laoreet, elit sed pulvinar
+              sollicitudin, urna arcu fermentum felis, in rhoncus nunc neque vitae
+              libero.</p></div></div><div id="navigation"><ul><li>Mauris</li><li>Cras</li><li>Proin</li><li>Integer</li><li>Curabitur</li><li>Integer</li><li>Suspendisse</li><li>Quisque</li></ul></div><div id="footer"> Proin quis orci eu erat molestie varius. Praesent condimentum
+          orci in lectus. Ut ipsum. In hac habitasse platea dictumst. </div></div></textarea><textarea name="css" style="display: none;">#wrapper {
+    width: 750px;
+    margin: 0 auto;
+    }
+#header {
+    width: 100%;
+    background-color: #fcf;
+    }
+#footer {
+    clear: both;
+    background-color: #ffc;
+    }
+#navigation {
+    width: 160px;
+    float: left;
+    background-color: #fcc;
+    }
+#maincontent {
+    width: 590px;
+    float: right;
+        }
+#primary {
+    width: 400px;
+    float: left;
+    background-color: #cfc;
+}
+#secondary {
+   width: 190px;
+   float: right;
+   background-color: #cff;
+}</textarea><input name="html_panel" value="0"/><input name="css_panel" value="0"/><input name="js_panel" value="0"/><input name="title" value="CSS Page Layout: 3 columns"/><input name="description" value=""/><input name="dtd" value="html 5"/><input name="wrap" value="h"/><input class="jsfiddlesubmit" value="JSFiddle - Example 5.4" name="submit"/></form></li><li><a href="example5.html">Example 5.5 - Flex</a>  
+  <form style="margin-left: 1em; display: inline;" method="post" target="fiddle" id="d2216e460" action="https://jsfiddle.net/api/post/library/pure/"><textarea name="html" style="display: none;" class="example" title="Flex"><div id="f1container"><div class="box box1">1</div><div class="box box2">2</div><div class="box box3">3</div><div class="box box4">4</div><div class="box box5">5</div></div></textarea><textarea name="css" style="display: none;">.box {
+  padding: 2em;
+  border: medium solid black;
+  width: 3em;
+}
+#f1container {
+  display: flex;
+}
+</textarea><input name="html_panel" value="0"/><input name="css_panel" value="0"/><input name="js_panel" value="0"/><input name="title" value="Flex"/><input name="description" value=""/><input name="dtd" value="html 5"/><input name="wrap" value="h"/><input class="jsfiddlesubmit" value="JSFiddle - Example 5.5" name="submit"/></form></li><li><a href="example6.html">Example 5.6 - Flex</a>  
+  <form style="margin-left: 1em; display: inline;" method="post" target="fiddle" id="d2216e476" action="https://jsfiddle.net/api/post/library/pure/"><textarea name="html" style="display: none;" class="example" title="Flex"><div id="f1container"><div class="box box1">1</div><div class="box box2">2</div><div class="box box3">3</div></div></textarea><textarea name="css" style="display: none;">.box {
+  padding: 2em;
+  border: medium solid black;
+  width: 3em;
+}
+#f1container {
+  display: flex;
+}
+.box1 {
+  flex-basis: 10%;
+}
+.box2 {
+  flex-basis: 20%;
+}
+.box3 {
+  flex-basis: 50%;
+}
+</textarea><input name="html_panel" value="0"/><input name="css_panel" value="0"/><input name="js_panel" value="0"/><input name="title" value="Flex"/><input name="description" value=""/><input name="dtd" value="html 5"/><input name="wrap" value="h"/><input class="jsfiddlesubmit" value="JSFiddle - Example 5.6" name="submit"/></form></li><li><a href="example7.html">Example 5.7 - Flex</a>  
+  <form style="margin-left: 1em; display: inline;" method="post" target="fiddle" id="d2216e488" action="https://jsfiddle.net/api/post/library/pure/"><textarea name="html" style="display: none;" class="example" title="Flex"><div id="f1container"><div class="box box1">1</div><div class="box box2">2</div><div class="box box3">3</div></div></textarea><textarea name="css" style="display: none;">.box {
+  padding: 2em;
+  border: medium solid black;
+  width: 3em;
+}
+#f1container {
+  display: flex;
+}
+.box1 {
+  flex-basis: 10%;
+}
+.box2 {
+  flex-basis: 20%;
+}
+.box3 {
+  flex-basis: 50%;
+}
+</textarea><input name="html_panel" value="0"/><input name="css_panel" value="0"/><input name="js_panel" value="0"/><input name="title" value="Flex"/><input name="description" value=""/><input name="dtd" value="html 5"/><input name="wrap" value="h"/><input class="jsfiddlesubmit" value="JSFiddle - Example 5.7" name="submit"/></form></li><li><a href="example8.html">Example 5.8 - Flex</a>  
+  <form style="margin-left: 1em; display: inline;" method="post" target="fiddle" id="d2216e501" action="https://jsfiddle.net/api/post/library/pure/"><textarea name="html" style="display: none;" class="example" title="Flex"><div id="f1container"><div class="box box1">1</div><div class="box box2">2</div><div class="box box3">3</div></div></textarea><textarea name="css" style="display: none;">.box {
+  padding: 2em;
+  border: medium solid black;
+  width: 3em;
+}
+#f1container {
+  display: flex;
+}
+.box1 {
+  flex-grow: 1;
+  flex-shrink: 1;
+  flex-basis: 200px;
+}
+.box2 {
+  flex-grow: 1;
+  flex-shrink: 1;
+  flex-basis: 100px;
+}
+.box3 {
+  flex-grow: 1;
+  flex-shrink: 1;
+  flex-basis: 500px;
+}
+</textarea><input name="html_panel" value="0"/><input name="css_panel" value="0"/><input name="js_panel" value="0"/><input name="title" value="Flex"/><input name="description" value=""/><input name="dtd" value="html 5"/><input name="wrap" value="h"/><input class="jsfiddlesubmit" value="JSFiddle - Example 5.8" name="submit"/></form></li></ul></main><nav><div class="navprevnext"><a class="button" href="slide1.html">Table of Contents</a></div><footer><a class="button toc" href="slide1.html">Table of Contents</a><a class="button cl" href="https://cscis12.dce.harvard.edu/">CSCI S-12</a><p class="copyright">Copyright © David Heitmeyer</p></footer></nav></body></html>

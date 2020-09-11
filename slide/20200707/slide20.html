@@ -1,0 +1,36 @@
+<html><head><meta charset="utf-8"/><title>Slide 20 - Responsive Layouts § Session 05 - CSS Layout, Frameworks, and Preprocessors</title><meta name="lecture" content="5"/><meta name="date" content="Session 05"/><link rel="stylesheet" href="slide_cscis12-2020.css"/><link rel="stylesheet" href="resources/jquery/css/smoothness/jquery-ui.css"/><script src="resources/js/jquery-1.9.0.min.js"> </script><script src="resources/js/jquery-ui-1.10.0.custom.min.js"> </script><link rel="stylesheet" href="prism/prism.css"/><script src="prism/prism.js"> </script><script src="resources/js/site.js">/* site.js */</script><script>
+    $(document).ready(function(){
+      $('pre[class*="language-"]').addClass('prism');
+      $('pre[class*="language-"] code').addClass('prism');
+      $('code[class*="language-"]').addClass('prism');
+
+      console.log( $('*[id^=example-container]') );
+      $('*[id^=example-container]').each(function(index,elem){
+        $(elem).tabs({selected: $(elem).attr("data-tabselected")});
+      });
+
+      var $myhost = location.host;
+      if ($myhost.match(/localhost/)) {
+        $('.hide-for-localhost').hide();
+      }
+    });
+  </script><script async="async" src="https://www.googletagmanager.com/gtag/js?id=UA-2675499-2"/><script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+
+      gtag('config', 'UA-2675499-2');
+    </script></head><body><header><div id="header"><div id="schoolname"><a href="https://summer.harvard.edu/">Harvard Summer School</a></div><div id="coursename"><a href="https://cscis12.dce.harvard.edu/">CSCI S-12 Fundamentals of Web Site Development<span class="term">  |  Summer 2020</span></a></div></div></header><nav><div class="navprevnext"><a class="button previous" href="slide19.html" title="flex-grow and flex-shrink" accesskey="&lt;">◁ previous</a><span class="hide-for-localhost"> Slide 20</span><span class="hide-for-localhost"> | </span><a class="button next" href="slide21.html" title="Responsive Web Design:  CSS Media Query" accesskey="&gt;"> next  ▷</a></div></nav><main><h2 class="main">Responsive Layouts</h2><p>Site is "responsive" to different devices.</p><p><img src="images/responsive-devices.jpg" alt="devices"/></p><p>CSS media query:</p><pre name="code" class="language-css line-numbers"><code>/* Larger than mobile */
+@media (min-width: 400px) { /* specific rules go here */ }
+
+/* Larger than phablet (also point when grid becomes active) */
+@media (min-width: 550px) { /* specific rules go here */ }
+
+/* Larger than tablet */
+@media (min-width: 750px) { /* specific rules go here */ }
+
+/* Larger than desktop */
+@media (min-width: 1000px) { /* specific rules go here */ }
+
+/* Larger than Desktop HD */
+@media (min-width: 1200px) { /* specific rules go here */ }</code></pre></main><nav><div class="navprevnext"><a class="button previous" href="slide19.html" title="flex-grow and flex-shrink">◁ previous</a><span class="hide-for-localhost"> Slide 20</span><span class="hide-for-localhost"> | </span><a class="button next" href="slide21.html" title="Responsive Web Design:  CSS Media Query"> next  ▷</a></div><footer><a class="button toc" href="slide1.html">Table of Contents</a><a class="button cl" href="https://cscis12.dce.harvard.edu/">CSCI S-12</a><p class="copyright">Copyright © David Heitmeyer</p></footer></nav></body></html>

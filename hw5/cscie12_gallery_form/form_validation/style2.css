@@ -1,0 +1,20 @@
+body {
+    background-color: lightgreen;
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+fieldset{
+    border:2px solid  blue;
+}
+
+legend{
+    font-weight: bold;
+}
+
+label.error {
+    color:red;
+    background: url('img/redx2.jpg') no-repeat;
+    padding-left: 1em;
+    margin-left: 0.5em;
+    
+}
